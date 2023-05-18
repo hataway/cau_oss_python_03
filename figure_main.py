@@ -1,7 +1,7 @@
 # %%
 
 # [fill this line]
-import figure
+import figure # figure 파일 import
     
 myline = figure.line(10)
 
