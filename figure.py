@@ -2,22 +2,28 @@ from math import pi
 from math import sqrt
 
 class line :
-    _length = 10 
+    _width = 10 
+    _height = 20
     
-    def __init__(self, num):
-        self._number = num # 생성자 초기 length 값
+    def __init__(self, width, height):
+        self._width = width # 생성자 초기 width 값
+        self._height = height # 생성자 초기 height 값
     
-    def set_length(self,num) :
-        self._length = num # setter
+    def set_length(self, width, height) : # setter
+        self._width = width 
+        self._height = height 
         
-    def get_length(self) :
-        return self._length # getter
+    def get_length(self) : # getter
+        return self._width, self._height
 
-def area_square(length) :
-    return length*length # 정사각형 넓이 계산
+def area_rectangle(width, height) : # rectangle 함수
+    if width <= 0 or height <= 0 : raise ValueError
+    return width * height
 
-def area_circle(length) :
-    return length*length*pi # 원 넓이 계산, pi = 3.14 ....
+def area_ellipse(width, height) : # ellipse 함수
+    if width <= 0 or height <= 0 : raise ValueError
+    return width * height * pi
 
-def area_regular_triangle(length) :
-    return length*length*sqrt(3)/4 # 삼각형 넓이 계산, sqrt = 루트 
+def area_right_triangle(width, height) : # right_triangle 함수
+    if width <= 0 or height <= 0 : raise ValueError
+    return width * height / 2

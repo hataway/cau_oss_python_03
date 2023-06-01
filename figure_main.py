@@ -3,15 +3,15 @@
 # [fill this line]
 import figure # figure 파일 import
     
-myline = figure.line(10)
+myline = figure.line(10, -1)
+width, height = myline.get_length()
 
-square = figure.area_square(myline.get_length())
-print(square)
-
-myline.set_length(20)
-regular_triangle = figure.area_regular_triangle(myline.get_length())
-print(regular_triangle)
-
-myline.set_length(30)
-circle = figure.area_circle(myline.get_length())
-print(circle)
+try :
+    rectangle = figure.area_rectangle(width, height) 
+    ellipse = figure.area_ellipse(width, height)
+    right_triangle = figure.area_right_triangle(width, height)
+    print(rectangle)
+    print(ellipse)
+    print(right_triangle)
+except ValueError :
+    print("please input positive number for width and height")
